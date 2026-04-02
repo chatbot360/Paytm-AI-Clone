@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paytm Clone with Paytm.AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-left">
+            <div class="profile-icon">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+        <div class="nav-center">
+            <svg class="paytm-logo" viewBox="0 0 200 64" width="80" height="26">
+                <text x="0" y="45" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="900" fill="#002970">Pay</text>
+                <text x="73" y="45" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="900" fill="#00baf2">tm</text>
+            </svg>
+        </div>
+        <div class="nav-right">
+            <i class="fas fa-search search-icon"></i>
+            <i class="far fa-bell search-icon" style="margin-left:15px;"></i>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard">
+
+        <!-- UPI Actions Banner -->
+        <section class="scan-banner">
+            <div class="scan-container">
+                <i class="fas fa-qrcode scan-ic"></i>
+                <div>
+                    <h3>Scan Any QR</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Money Transfers Container -->
+        <section class="app-card">
+            <h2 class="app-card-title">UPI Money Transfer</h2>
+            <div class="grid-4 custom-grid">
+                <div class="action-btn">
+                    <div class="icon-circle text-blue bg-circle-light"><i class="fas fa-user-circle"></i></div>
+                    <span>To Mobile or Contact</span>
+                </div>
+                <div class="action-btn">
+                    <div class="icon-circle text-blue bg-circle-light"><i class="fas fa-building-columns"></i></div>
+                    <span>To Bank or Self A/c</span>
+                </div>
+                <div class="action-btn">
+                    <div class="icon-circle text-blue bg-circle-light"><i class="fas fa-wallet"></i></div>
+                    <span>Paytm Wallet</span>
+                </div>
+                <div class="action-btn">
+                    <div class="icon-circle text-blue bg-circle-light"><i class="fas fa-money-bill-transfer"></i></div>
+                    <span>Balance & History</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recharges & Bill Payments -->
+        <section class="app-card">
+            <h2 class="app-card-title">Recharges & Bill Payments</h2>
+            <div class="grid-4 custom-grid">
+                <div class="action-btn">
+                    <div class="icon-circle text-orange"><i class="fas fa-mobile-screen"></i></div>
+                    <span>Mobile Recharge</span>
+                </div>
+                <div class="action-btn">
+                    <div class="icon-circle text-cyan"><i class="fas fa-bolt"></i></div>
+                    <span>Electricity</span>
+                </div>
+                <div class="action-btn">
+                    <div class="icon-circle text-green"><i class="fas fa-credit-card"></i></div>
+                    <span>Credit Card</span>
+                </div>
+                <div class="action-btn">
+                    <div class="icon-circle text-purple"><i class="fas fa-satellite-dish"></i></div>
+                    <span>DTH</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transactions -->
+        <section class="app-card">
+            <h2 class="app-card-title">Recent Payments</h2>
+            <ul class="transaction-list">
+                <li class="transaction-item">
+                    <div class="t-icon bg-gray"><i class="fas fa-store"></i></div>
+                    <div class="t-details">
+                        <h4>Local Vendor</h4>
+                        <p>Paid today at 10:45 AM</p>
+                    </div>
+                    <div class="t-amount negative">- ₹540</div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Paytm.AI Chatbot -->
+    <div id="chatbot-container" class="chatbot-container expanded state-hidden">
+        
+        <!-- Minimized Floating Icon -->
+        <div id="chatbot-minimized" class="chatbot-minimized hidden" onclick="toggleChatbot()">
+            <img src="avatar.png" alt="Paytm AI Icon" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">
+        </div>
+
+        <!-- Expanded Chat Window -->
+        <div id="chatbot-window" class="chatbot-window">
+            <div class="chat-header">
+                <div class="header-info">
+                    <div class="ai-avatar-wrapper">
+                        <img src="avatar.png" alt="AI Avatar" class="ai-avatar-img">
+                    </div>
+                    <div class="ai-name">
+                        <h3>Paytm.AI</h3>
+                        <span class="status-indicator">Online</span>
+                    </div>
+                </div>
+                <div class="header-controls">
+                    <button class="icon-btn" onclick="toggleChatbot()" title="Minimize"><i class="fas fa-minus"></i></button>
+                </div>
+            </div>
+
+            <div class="chat-body" id="chat-messages">
+                <!-- Dynamically assigned -->
+            </div>
+
+            <div class="quick-replies" id="quick-replies">
+                <button onclick="sendQuickReply('Refund Radar')">Refund Radar</button>
+                <button onclick="sendQuickReply('How do I scan a QR?')">How to use QR</button>
+                <button onclick="sendQuickReply('Track my refund')">Track my refund</button>
+                <button onclick="sendQuickReply('What offers do I have?')">Offers</button>
+            </div>
+
+            <div class="chat-footer">
+                <input type="text" id="chat-input" placeholder="Say something..." autocomplete="off">
+                <button id="mic-btn" class="icon-btn mic-btn" title="Hold to Speak"><i class="fas fa-microphone"></i></button>
+                <button id="send-btn" class="icon-btn send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Voice Recording States Overlay -->
+    <div id="listening-overlay" class="listening-overlay hidden">
+        <div class="ripple-ring"></div>
+        <i class="fas fa-microphone fa-3x" style="color:white; z-index: 10;"></i>
+        <p style="z-index: 10; margin-top: 10px; font-weight:600; font-size:1.2rem;">Recording...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
