@@ -32,7 +32,7 @@ Financial discrepancies often solicit monumental stress. Our flagship feature is
 
 ### 4. Flawless Blind-Friendly Accessibility
 Inclusivity was paramount to our team's ethos. The application integrates natively with the **Web Speech API** for profound accessibility.
-- **Intelligent Voice Prompting (Text-to-Speech):** If the chatbot remains active but undisturbed for 30 consecutive seconds, it assumes auditory assistance is necessitated. It vocalizes its intent aloud with perfect clarity: *"How may I help you today! Now your voice will be recorded for processing."*
+- **Custom Female Voice Formulation (Text-to-Speech):** If the chatbot remains active but undisturbed for 30 consecutive seconds, it assumes auditory assistance is necessitated. Instead of relying on jarring robotic defaults, our engine actively filters for high-quality, soft female browser voices (e.g., Zira, Samantha) and dynamically adjusts the pitch and pacing to sound incredibly warm and human-like. It vocalizes: *"How may I help you today! Now your voice will be recorded for processing."*
 - **Haptic Feedback Integration:** Harmonized closely with JavaScript's `navigator.vibrate()`, the device physically vibrates before initiating the microphone, equipping visually impaired users with an unmistakable tactile cue.
 
 ---

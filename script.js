@@ -44,8 +44,27 @@ function speakText(text, callback) {
     if ('speechSynthesis' in window) {
         const msg = new SpeechSynthesisUtterance();
         msg.text = text;
-        msg.lang = 'en-IN';
-        msg.rate = 1;
+        
+        // Settings for a softer, more human-like female voice
+        msg.pitch = 1.15; 
+        msg.rate = 0.95; 
+        msg.volume = 1.0;
+
+        // Find a high-quality female voice
+        const voices = window.speechSynthesis.getVoices();
+        let femaleVoice = voices.find(v => 
+            v.name.includes('Female') || 
+            v.name.includes('Zira') || 
+            v.name.includes('Samantha') || 
+            v.name.includes('Victoria')
+        );
+        
+        // Assign the voice if found, else fallback
+        if (femaleVoice) {
+            msg.voice = femaleVoice;
+        } else {
+            msg.lang = 'en-IN'; 
+        }
         
         msg.onend = () => {
             if (callback) callback();
@@ -55,6 +74,13 @@ function speakText(text, callback) {
     } else {
         if (callback) callback();
     }
+}
+
+// Pre-load voices so they are ready when the bot speaks
+if ('speechSynthesis' in window) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
 }
 
 // Initialization
