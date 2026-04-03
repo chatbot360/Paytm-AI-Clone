@@ -25,15 +25,20 @@ An animated, humanized 3D customer service avatar resides perpetually within the
 - **Intelligent Onboarding:** Upon initialization, Paytm.AI proactively assesses user backend data and gracefully alerts them. *(e.g., "Your boAt, Myntra, and +4 more vouchers are expiring... Click here to claim!")*
 - **Dynamic Interface Mapping:** The intelligent quick-reply buttons fluidly restructure and adopt vibrant, eye-catching color schemas on every subsequent load to maintain visual engagement.
 
-### 3. "Refund Radar" Technology
+### 3. "Refund Radar" & Tracking Timeline
 Financial discrepancies often solicit monumental stress. Our flagship feature is the Refund Radar logic pipeline.
 - **Natural Language Parsing:** Utilizes sophisticated intent-matching logic to swiftly recognize distressed phrasing (e.g., *"My money didn't go through"*, *"Failed transaction"*).
-- **Automated Reassurance:** Instantly processes a simulated system check, returns a distinct Support Ticket, and comforts the end-user by providing an irrevocable reassurance that their funds will securely revert within 24-48 hours. 
+- **Persistent Accessibility:** Operates as a permanently visible, dedicated sub-button securely docked beneath the main AI avatar.
+- **Dynamic Tracking UI:** Capable of generating an interactive, visual Tracking Timeline injected directly into the chat. It cleanly depicts exact milestone checkpoints (`Bank Issue Detected`, `NPCI Waiting`) to definitively simulate a real dispute status route.
 
-### 4. Flawless Blind-Friendly Accessibility
-Inclusivity was paramount to our team's ethos. The application integrates natively with the **Web Speech API** for profound accessibility.
-- **Custom Female Voice Formulation (Text-to-Speech):** If the chatbot remains active but undisturbed for 30 consecutive seconds, it assumes auditory assistance is necessitated. Instead of relying on jarring robotic defaults, our engine actively filters for high-quality, soft female browser voices (e.g., Zira, Samantha) and dynamically adjusts the pitch and pacing to sound incredibly warm and human-like. It vocalizes: *"How may I help you today! Now your voice will be recorded for processing."*
-- **Haptic Feedback Integration:** Harmonized closely with JavaScript's `navigator.vibrate()`, the device physically vibrates before initiating the microphone, equipping visually impaired users with an unmistakable tactile cue.
+### 4. Interactive FAQ Accordion
+To minimize screen clutter while maximizing helpfulness, the ecosystem incorporates an elegant accordion system. 
+- **10-Point Knowledge Base:** Comprehensively mapped with specialized answers regulating UPI failures, PPBL Debit rules, expired KYC issues, and fraud reporting.
+- **Space-Efficient Transitions:** Tapping on the general `+` FAQs cleanly cascades the answers downwards with a smooth toggle animation and auto-scrolls into viewport focus. 
+
+### 5. Seamless Voice-to-Text Architecture
+For swift operation, users can utilize the microphone module inline. 
+- **Verbal Execution:** Taps into native `SpeechRecognition` to dictate tasks. Commands like "Lodge a complaint" or "Refund please" are instantly processed via the chatbot loop without requiring manual interaction or typing.
 
 ---
 
